@@ -1,35 +1,40 @@
 ---
 import "../styles/theme.css";
-
+const pageTitle = "JP Sauve | Blog";
 ---
 
 <html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>AstroBlog | JP Sauve</title>
-	</head>
-	<body>
-		<main class="page-wrapper">
-			<section class="card">
-				<p class="eyebrow">Blog</p>
-				<nav class="nav" aria-label="Main navigation">
-					<a href="/">Home</a>
-					<a href="/about">About</a>
-				</nav>
-				<h1>JP Sauve's Blog</h1>
-				<p class="lede">
-					Notes on front-end engineering, modern NextJS work, and practical lessons from
-					leading teams.
-				</p>
-				<p>
-					I keep this page simple while learning Astro. Posts and tutorials will be added
-					here over time.
-				</p>
-			</section>
-		</main>
-	</body>
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{pageTitle}</title>
+    </head>
+    <body>
+        <main class="page-wrapper">
+            <section class="card">
+                <p class="eyebrow">Blog</p>
+                <nav class="nav" aria-label="Main navigation">
+                    <a href="/">Home</a>
+                    <a href="/about">About</a>
+                </nav>
+                <h1>{pageTitle}</h1>
+                <p class="lede">
+                    Notes on front-end engineering, modern NextJS work, and
+                    practical lessons from leading teams.
+                </p>
+                <p>
+                    I keep this page simple while learning Astro. Posts and
+                    tutorials will be added here over time.
+                </p>
+                <ul>
+                    <li><a href="/posts/post-1/">Post 1</a></li>
+                    <li><a href="/posts/post-2/">Post 2</a></li>
+                    <li><a href="/posts/post-3/">Post 3</a></li>
+                </ul>
+            </section>
+        </main>
+    </body>
 </html>

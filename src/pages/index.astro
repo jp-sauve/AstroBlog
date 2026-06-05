@@ -1,6 +1,6 @@
 ---
 import "../styles/theme.css";
-
+const pageTitle = "JP Sauve | Home";
 ---
 
 <html lang="en">
@@ -10,7 +10,7 @@ import "../styles/theme.css";
 		<link rel="icon" href="/favicon.ico" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>JP Sauve | Home</title>
+		<title>{pageTitle}</title>
 	</head>
 	<body>
 		<main class="page-wrapper">
@@ -20,7 +20,7 @@ import "../styles/theme.css";
 					<a href="/about">About</a>
 					<a href="/blog">Blog</a>
 				</nav>
-				<h1>JP Sauve</h1>
+				<h1>{pageTitle}</h1>
 				<p class="lede">
 					Senior software engineer and team lead at Carfax, focused on front-end
 					development and modern NextJS apps.

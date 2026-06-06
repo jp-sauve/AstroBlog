@@ -1,13 +1,19 @@
-@import url("https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,500&display=swap");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.2.5/400.css");
+@import url("https://cdn.jsdelivr.net/npm/@fontsource/iosevka@5.2.5/600.css");
+@import url("https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&display=swap");
 
 :root {
-	--bg-top: #f6f8f5;
-	--bg-bottom: #e8efea;
-	--ink: #1f2a24;
-	--muted: #4d6157;
-	--card: rgba(255, 255, 255, 0.84);
-	--line: rgba(23, 42, 32, 0.14);
-	--accent: #0f766e;
+	--bg-top: #f3faf7;
+	--bg-bottom: #e4f3ed;
+	--ink: #14231d;
+	--muted: #385247;
+	--card: rgba(255, 255, 255, 0.88);
+	--line: rgba(19, 45, 35, 0.16);
+	--accent: #059669;
+	--accent-deep: #047857;
+	--accent-soft: #d1fae5;
+	--font-ui: "Iosevka Extended", "IBM Plex Mono", "SFMono-Regular", Menlo, Consolas, monospace;
+	--font-copy: "Source Serif 4", "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
 }
 
 * {
@@ -18,11 +24,11 @@ body {
 	margin: 0;
 	min-height: 100vh;
 	padding: 2rem 1rem;
-	font-family: "Sora", "Segoe UI", sans-serif;
+	font-family: var(--font-ui);
 	color: var(--ink);
 	background:
-		radial-gradient(circle at 12% 18%, rgba(15, 118, 110, 0.18), transparent 38%),
-		radial-gradient(circle at 86% 8%, rgba(122, 157, 109, 0.16), transparent 34%),
+		radial-gradient(circle at 12% 18%, rgba(5, 150, 105, 0.22), transparent 38%),
+		radial-gradient(circle at 86% 8%, rgba(16, 185, 129, 0.18), transparent 34%),
 		linear-gradient(180deg, var(--bg-top), var(--bg-bottom));
 	display: grid;
 	place-items: center;
@@ -37,7 +43,7 @@ body {
 	border: 1px solid var(--line);
 	border-radius: 1.2rem;
 	padding: clamp(1.3rem, 2vw + 1rem, 2.2rem);
-	box-shadow: 0 16px 40px rgba(18, 34, 28, 0.08);
+	box-shadow: 0 16px 40px rgba(13, 43, 32, 0.09);
 }
 
 .eyebrow {
@@ -57,7 +63,7 @@ body {
 }
 
 .nav a {
-	color: #14584f;
+	color: var(--accent-deep);
 	font-size: 0.94rem;
 	font-weight: 600;
 	text-underline-offset: 0.2em;
@@ -69,20 +75,24 @@ body {
 
 h1 {
 	margin: 0 0 1rem;
-	font-family: "Source Serif 4", Georgia, serif;
+	font-family: var(--font-ui);
 	font-size: clamp(2rem, 4vw, 2.8rem);
+	font-weight: 600;
+	letter-spacing: -0.02em;
 	line-height: 1.12;
 }
 
 p {
 	margin: 0 0 1rem;
-	line-height: 1.7;
+	font-family: var(--font-copy);
+	font-size: 1.05rem;
+	line-height: 1.75;
 	color: var(--muted);
 }
 
 .lede {
 	font-size: 1.08rem;
-	color: #253730;
+	color: #1e3a31;
 }
 
 .tags {
@@ -94,14 +104,14 @@ p {
 	gap: 0.6rem;
 }
 
-.tags li {
+.tags li.skill {
+	font-family: var(--font-ui);
 	padding: 0.42rem 0.72rem;
 	border-radius: 999px;
-	border: 1px solid rgba(15, 118, 110, 0.24);
-	background: rgba(248, 253, 251, 0.82);
+	border: 1px solid rgba(5, 150, 105, 0.28);
+	background: var(--accent-soft);
 	font-size: 0.86rem;
 	font-weight: 500;
-	color: #184f46;
 }
 
 @media (max-width: 640px) {

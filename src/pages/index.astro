@@ -1,26 +1,11 @@
 ---
-import "../styles/theme.css";
-const pageTitle = "JP Sauve | Home";
+import BaseLayout from '../layouts/BaseLayout.astro';
+const pageTitle = "Home";
 ---
-
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{pageTitle}</title>
-	</head>
-	<body>
-		<main class="page-wrapper">
-			<section class="card">
+<BaseLayout pageTitle={pageTitle} current="home">
+  			<section class="card">
 				<p class="eyebrow">Home</p>
-				<nav class="nav" aria-label="Main navigation">
-					<a href="/about">About</a>
-					<a href="/blog">Blog</a>
-				</nav>
-				<h1>{pageTitle}</h1>
+				
 				<p class="lede">
 					Senior software engineer and team lead at Carfax, focused on front-end
 					development and modern NextJS apps.
@@ -30,6 +15,4 @@ const pageTitle = "JP Sauve | Home";
 					my background, and what I am learning as I build for the web.
 				</p>
 			</section>
-		</main>
-	</body>
-</html>
+</BaseLayout>

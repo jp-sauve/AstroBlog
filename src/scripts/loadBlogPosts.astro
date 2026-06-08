@@ -1,0 +1,14 @@
+---
+import type { MarkdownInstance } from "astro";
+import type { PostFrontmatter } from "../types/posts";
+
+export function loadBlogPosts() {
+    const allPosts = Object.values(
+        import.meta.glob<MarkdownInstance<PostFrontmatter>>("../pages/posts/*.md", {
+            eager: true,
+        }),
+    );
+
+    return allPosts;
+}
+---

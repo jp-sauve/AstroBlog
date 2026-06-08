@@ -1,0 +1,1 @@
+export type CurrentPage = "home" | "about" | "blog" | "tags" | "contact";

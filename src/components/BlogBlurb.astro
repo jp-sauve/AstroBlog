@@ -1,0 +1,67 @@
+---
+interface Props {
+  title: string;
+  description: string;
+  url: string;
+  publishDate: Date;
+}
+
+const { title, description, url, publishDate } = Astro.props;
+---
+
+<article class="blog-blurb">
+  <h3>
+    <a href={url}>{title}</a>
+  </h3>
+  <p class="publish-date">
+    {publishDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+  </p>
+  <p class="description">{description}</p>
+  <a href={url} class="read-more">Read more →</a>
+</article>
+
+<style>
+  .blog-blurb {
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.05);
+    margin-bottom: 1.5rem;
+  }
+
+  .blog-blurb h3 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+  }
+
+  .blog-blurb h3 a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .blog-blurb h3 a:hover {
+    text-decoration: underline;
+  }
+
+  .publish-date {
+    margin: 0.5rem 0;
+    font-size: 0.875rem;
+    color: #666;
+  }
+
+  .description {
+    margin: 1rem 0;
+    line-height: 1.6;
+  }
+
+  .read-more {
+    display: inline-block;
+    margin-top: 0.5rem;
+    color: #0ea5e9;
+    text-decoration: none;
+    font-weight: 500;
+  }
+
+  .read-more:hover {
+    text-decoration: underline;
+  }
+</style>

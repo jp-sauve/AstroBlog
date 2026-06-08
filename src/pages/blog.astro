@@ -1,26 +1,19 @@
 ---
-import "../styles/theme.css";
-const pageTitle = "JP Sauve | Blog";
----
+import BaseLayout from "../layouts/BaseLayout.astro";
+import type { MarkdownInstance } from "astro";
+import type { PostFrontmatter } from "../types/posts";
+import BlogBlurb from "../components/BlogBlurb.astro";
 
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        <link rel="icon" href="/favicon.ico" />
-        <meta name="viewport" content="width=device-width" />
-        <meta name="generator" content={Astro.generator} />
-        <title>{pageTitle}</title>
-    </head>
-    <body>
-        <main class="page-wrapper">
+const allPosts = Object.values(
+    import.meta.glob<MarkdownInstance<PostFrontmatter>>("./posts/*.md", {
+        eager: true,
+    }),
+);
+const pageTitle = "Blog";
+---
+<BaseLayout pageTitle={pageTitle} current="blog">
             <section class="card">
                 <p class="eyebrow">Blog</p>
-                <nav class="nav" aria-label="Main navigation">
-                    <a href="/">Home</a>
-                    <a href="/about">About</a>
-                </nav>
-                <h1>{pageTitle}</h1>
                 <p class="lede">
                     Notes on front-end engineering, modern NextJS work, and
                     practical lessons from leading teams.
@@ -30,11 +23,8 @@ const pageTitle = "JP Sauve | Blog";
                     tutorials will be added here over time.
                 </p>
                 <ul>
-                    <li><a href="/posts/post-1/">Post 1</a></li>
-                    <li><a href="/posts/post-2/">Post 2</a></li>
-                    <li><a href="/posts/post-3/">Post 3</a></li>
+                    {allPosts.map((post: any) => <BlogBlurb url={post.url} title={post.frontmatter.title} description={post.frontmatter.description} publishDate={new Date(post.frontmatter.pubDate)} />)}
                 </ul>
             </section>
-        </main>
-    </body>
-</html>
+</BaseLayout>
+

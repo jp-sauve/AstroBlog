@@ -1,0 +1,17 @@
+---
+import Navigation from "../components/Navigation.astro";
+import Menu from "../components/Menu.astro";
+import type { CurrentPage } from "../types/navigation";
+
+interface Props {
+	current: CurrentPage;
+}
+
+const { current } = Astro.props as Props;
+---
+<header class="header">
+    <nav class="nav" aria-label="Main navigation">
+        <Menu />
+        <Navigation current={current} />
+    </nav>
+</header>

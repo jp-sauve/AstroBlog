@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { loadBlogPosts } from "../../scripts/loadBlogPosts.astro";
+
+const allPosts = loadBlogPosts();
+
+const allTags = Array.from(
+	new Set(allPosts.flatMap((post) => post.frontmatter.tags)),
+).sort((a, b) => a.localeCompare(b));
+
+const pageTitle = "Tags";
+---
+<BaseLayout pageTitle={pageTitle} current="tags">
+	<section class="card">
+		<p class="eyebrow">Tags</p>
+		<p class="lede">Browse posts by topic.</p>
+		<ul>
+			{allTags.map((tag) => (
+				<li>
+					<a href={`/tags/${encodeURIComponent(tag)}/`}>{tag}</a>
+				</li>
+			))}
+		</ul>
+	</section>
+</BaseLayout>

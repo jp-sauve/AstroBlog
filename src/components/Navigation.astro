@@ -1,0 +1,14 @@
+---
+import type { CurrentPage } from "../types/navigation";
+
+interface Props {
+	current: CurrentPage;
+}
+
+const { current } = Astro.props as Props;
+---
+<div id="main-menu" class="nav-links">
+    <a href="/" class={current === "home" ? "active" : ""}>Home</a>
+    <a href="/about/" class={current === "about" ? "active" : ""}>About</a>
+    <a href="/blog/" class={current === "blog" ? "active" : ""}>Blog</a>
+</div>

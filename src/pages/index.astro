@@ -1,4 +1,5 @@
 ---
+import Greeting from '../components/Client/Greeter';
 import BaseLayout from '../layouts/BaseLayout.astro';
 const pageTitle = "Home";
 ---
@@ -7,6 +8,7 @@ const pageTitle = "Home";
 				<p class="eyebrow">Home</p>
 				
 				<p class="lede">
+					<Greeting client:load messages={["Hej", "Hallo", "Hola", "Habari"]} />
 					Senior software engineer and team lead at Carfax, focused on front-end
 					development and modern NextJS apps.
 				</p>
